@@ -31,7 +31,7 @@ def econ():
 
 @app.route("/foodExp",methods=["get","post"])
 def foodExp():
-    q = request.form.get("q")
+    q = float(request.form.get("q"))
     r = model.predict([[q]])
     return(render_template("foodExp.html", r=r[0][0]))
 
